@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>两个margin BUG</title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+		}
+
+		.wrapper{
+			position:absolute;
+			margin-left:500px;
+			margin-top:100px;
+			width:100px;
+			height:100px;
+			background-color:red;
+		}
+
+
+		.content{
+
+			margin-top:50px;
+			margin-left:50px;
+			width:50px;
+			height:50px;
+			background-color:green;
+		}
+
+	</style>
+	<link rel="stylesheet" type="text/css" href="">
+</head>
+<body>
+	<div class="wrapper">
+		<div class="content"></div>
+	</div>
+<p>
+	<h3>margin塌陷：父子嵌套的盒子，它的margin的垂直方向的会粘合到一起 取最大的值</h3>
+<br>
+<br>
+	弥补方法：<br>
+	1. 给父级加一个border，1px的border <br>
+	2. bfc <br>
+<br>
+<br>
+	触发bfc方法： <br>
+	1. position:relative;定位即触发bfc <br>
+	2. display:inline-block; <br>
+	3. float:left/right;浮动，左浮或右浮 <br>
+	4. overflow：hidden； <br>
+</p>
+<br>
+<br>
+<br>
+<p>
+	<h3>块级元素margin垂直共用：两个块级元素的margin垂直会空间共用</h3>
+	<br>
+	<br>
+	可以用触发bfc的解决，但是这个BUG不解决，直接设置合并的高度解决
+</p>
+
+
+	<h3>清除浮动流</h3>
+	div：：
+</body>
+</html>

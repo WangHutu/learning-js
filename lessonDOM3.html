@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style type="text/css">
+    input {
+        border:1px solid black;
+    }
+</style>
+<body>
+    <div>
+        minutes：<input type="text"> <br>
+        seconds：<input type="text">  
+    </div>
+    <script type="text/javascript">
+
+
+// 封装函数  打印运行函数的时候 的年月日时分秒
+// function time() {
+//     var date = new Date();
+//     var nian = date.getFullYear();
+//     var yue = date.getMonth() + 1;
+//     var ri = date.getDate();
+//     var shi = date.getHours();
+//     var fen = date.getMinutes();
+//     var miao = date.getSeconds();
+//     console.log(nian + "年" + " " + yue + "月" + ri + "日" + " " + shi + "点" + fen + "分" + miao + "秒");
+// }
+// time();
+
+
+// 三分钟的计时器
+// var minutesNode = document.getElementsByTagName('input')[0];
+// var secondsNode = document.getElementsByTagName('input')[1];
+// var minutes = 0;
+// var seconds = 0;
+// var timer = setInterval(function() {
+//     seconds ++;
+//     if(seconds == 60) {
+//         seconds = 0;
+//         minutes ++;
+//     }
+//     minutesNode.value = minutes;
+//     secondsNode.value = seconds;
+//     if(minutes == 3) {
+//         clearInterval(timer);
+//     }
+// },1000)
+
+
+// 三分钟倒计时
+// var minutesNode = document.getElementsByTagName('input')[0];
+// var secondsNode = document.getElementsByTagName('input')[1];
+// var minutes = 3;
+// var seconds = 0;
+// var timer = setInterval(function() {
+//     seconds --;
+//     if(seconds < 0) {
+//         minutes --;
+//         seconds = 60;
+//     }
+//     minutesNode.value = minutes;
+//     secondsNode.value = seconds;
+//     if(minutes == 0 && seconds == 0) {
+//         clearInterval(timer);
+//     }
+// },1000)
+
+
+document.onclick = function(e) {
+    console.log(e);
+}
+
+    </script>
+
+</body>
+</html>

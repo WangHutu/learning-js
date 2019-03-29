@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>导航栏</title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+			color:#424242;
+			font-family:arial;
+			
+		}
+		a{
+			text-decoration: none;
+		}
+		.nav::after{
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.nav{
+			list-style: none;
+		}
+		.nav .list-item{
+			float: left;
+			margin: 0 10px;
+			height: 30px;
+			line-height: 30px;
+
+		}
+		.nav .list-item a{
+			color:#f40;
+			font-weight: bold;
+			padding:0 5px;
+			display: inline-block;
+			height:30px;
+			border-radius: 15px;
+			
+		}
+		.nav .list-item a:hover{
+			background-color: #f40;
+			color: #fff;
+		}
+	</style>
+	<link rel="stylesheet" type="text/css" href="">
+</head>
+<body>
+<ul class="nav">
+	<li class="list-item"><a href="#">天猫</a></li>
+	<li class="list-item"><a href="#">聚划算</a></li>
+	<li class="list-item"><a href="#">淘宝商城</a></li>
+</ul>
+
+
+
+<h3>注意要点</h3>
+
+<h4>	1.行级元素只能嵌套行级元素</h4>
+<h4>	2.块级元素能嵌套任何元素</h4>
+
+<h3>	注意！！！：p 标签不能嵌套块级元素</h3>
+<h3>    a 标签里面不能嵌套a 标签 </h3>
+
+
+
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../js/54454545.js">
+    <title>函数</title>
+</head>
+
+<body>
+    <input type="num">
+    <script type="text/javascript">
+
+
+        // 函数中的参数叫形参，传过来的值为实参
+        // 函数中有默认的数组：arguments[];
+        // 不管有多少实参，求所有实参的和
+        // function sum(){
+        //     var result = 0;
+        //     for (var i = 0; i < arguments.length; i++){
+        //         result += arguments[i];
+        //     }
+        //     console.log(result);
+        // }
+        // sum(1,2,3,4,5,3,2,6,7,2,2);
+
+
+        // 注意 arguments 数组和 形参 是映射规则；不是相等关系，但是一个变另一个跟着变 
+        // 注意 arguments 对象的length属性显示实参的个数，函数的length属性显示形参的个数。
+
+        // 形参改变一下，那么arguments跟着变。
+        // function sum (a,b) {
+        //     a = 2;
+        //     console.log(arguments[0]);
+        // }
+        // sum(1,2);
+
+        // arguments改变一下，形参也跟着变
+        // function sum(a,b) {
+        //     a = 2;
+        //     arguments[0] = 3;
+        //     console.log(a);
+        // }
+        // sum(1,2);
+
+
+        // return
+        // 终止函数
+        // 返回值
+
+
+// 输入数字反着输出，并转换成为大写中文
+    // function reverse() {
+    //     var num = window.prompt("input");
+    //     var str = "";
+    //     if (typeof num != "number") {
+    //         alert("请输入数字！")
+    //     }
+    //     for (var i = num.length - 1; i >= 0; i--) {
+    //         str += transfer(num[i]);
+    //     }
+    //     document.write(str);
+    // }
+    // function transfer(target) {
+    //     switch (target) {
+    //         case "1":
+    //             return "壹";
+    //         case "2":
+    //             return "贰";
+    //         case "3":
+    //             return "叁";
+    //         case "4":
+    //             return "肆";
+    //         case "5":
+    //             return "伍";
+    //         case "6":
+    //             return "陆";
+    //         case "7":
+    //             return "柒";
+    //         case "8":
+    //             return "捌";
+    //         case "9":
+    //             return "玖";
+    //         case "10":
+    //             return "拾";
+    //     }
+    // }
+
+
+// 不用递归写斐波那契数列
+// function fb(n) {
+//         var x,
+//             f = 0,
+//             t = 1;
+//         if (n == 1) {
+//             return f;
+//         } else if (n == 2) {
+//             return t;
+//         } else {
+//             for (var i = 3; i <= n; i++) {
+//                 x = t + f;
+//                 f = t;
+//                 t = x;
+//             }
+//             return x;
+//         }
+//     }
+
+
+// 用递归写斐波那契数列
+        // function fb(n) {
+        //     var n;
+        //     if(n == 0) {
+        //         return 0;
+        //     } 
+        //     if(n == 1) {
+        //         return 1;
+        //     }
+        //     return fb(n - 1) + fb(n - 2);
+        // }
+
+
+        // js运行三部曲
+
+        // 1.语法分析
+        // 
+
+        // 2.预编译 
+        //     创建AO对象 --> 找形参和变量声明，将变量和形参名作为AO属性名，值为undefined --> 将实参值和形参统一 --> 在函数体里面找函数声明，值赋予函数体
+        // 
+
+        // 3.解释执行
+
+
+        // 闭包，返回函数：把函数保存出来了，保存出来的函数的作用域链中包含父级函数的作用域！
+        // function a () {
+        //     function b () {
+        //         var bbb = 234;
+        //         console.log(aaa);
+        //     }
+        //     var aaa = 123;
+        //     return b;
+        // }
+        // var glob = 100;
+        // var demo = a();
+        // demo();  //123
+
+
+        // 立即执行函数
+        // (function(){}());   W3C 建议第一种
+        // (function(){})();
+        // 只有表达式才能被执行符号执行
+        // 能被执行符号执行的表达式，会放弃函数的名字 ---> 变成立即执行函数
+
+
+        // 闭包
+        // 闭包会在父函数外部，改变父函数内部变量的值。
+        // 所以，如果你把父函数当作对象使用，把闭包当作它的公用方法，把内部变量当作它的私有属性，
+        // 这时一定要小心，不要随便改变父函数内部变量的值。
+        // function test(){
+        //     var arr = [];
+        //     for (var i = 0; i < 10; i ++){
+        //         arr[i] = function (){
+        //             console.log(i);
+        //         }
+        //     }
+        //     return arr;
+        // }
+        // var myArr = test();
+        // for (var j = 0; j < 10; j ++){
+        //     myArr[j]();
+        // }
+
+
+        // 闭包和立即执行函数
+        // function test(){
+        //     var arr = [];
+        //     for (var i = 0; i < 10; i ++){
+        //         (function (j) {
+        //             arr[j] = function () {
+        //                 document.write(j + " ");
+        //             }
+        //         }(i));
+        //     }
+        //     return arr;
+        // }
+        // var myArr = test();
+        // for (var j = 0; j < 10; j ++){
+        //     myArr[j]();               // 打印出来是 0 1 2 3 4 5 6 7 8 9 
+        // }
+
+
+        // 闭包写累加器
+        // function my() {
+        //     var num = 0;
+        //     function a () {
+        //         console.log(++num);
+        //     }
+        //     return a;
+        // }
+        // add = my();
+        // add ();
+        // add ();
+        // add ();
+
+
+        // 求输入的字节长度
+        // function retByteslen(target) {
+        //     var count = target.length; 
+        //     for(var i = 0; i < target.length; i++){
+        //         if(target.charCodeAt(i) > 255) {    // 如果字符是汉字，再加一个字节数；
+        //             count ++;
+        //         }
+        //     }
+        //     console.log(count)
+        // }
+
+
+        /*
+        // 构造函数
+           // 通过函数名的大驼峰式写法来确定是否是构造函数
+        
+            // 构造函数的隐式执行
+            function Car (color,owner) {
+                // 隐式三段式之一：默认执行 this = {}
+                this.name = 'BMW',   // 隐式三段式之二：执行函数体内的属性
+                this.color = color,
+                this.height = 1400,
+                this.owner = owner;
+                // 隐式三段式之三：默认返回 return this;
+            }
+        
+            var car = new Car('red','prof.wang');
+        */
+
+
+        // 包装类
+        // 原始值是没有属性和方法的
+        // 原始值：也叫基本数据类型，包括 Number、Stirng、Boolean、Null、Underfined。
+        // 引用值：指的是复合数据类型的值，包括 Object、Function、Array、Date、RegExp。
+        /*
+            var str = "abcd";  // 第一步：隐式执行 var str = new string("abcd") 创建出基本类型相同的对象。
+            var long = str.length;  // 第二步：调用新创建出来的对象的  length 属性，并赋值给 变量 long
+                                    // 第三步：调用完之后这个创建出的对象被销毁  delete
+            console.log(long);   // 输出 4 
+        */
+
+
+        // var str = "abc";
+        // str += 1;
+        // var test = typeof (str);
+        // if (test.length == 6) {
+        //     test.sign = "返回结果可能为string"
+        // }
+        // console.log(test.sign);   // 输出 undefined。    因为test是字符串，字符串是原始值， test.sign 代码，把属性sign添加进去之后，随即就删除了对象
+
+
+
+    </script>
+
+</body>
+
+</html>

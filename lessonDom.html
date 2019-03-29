@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DOM初探-选项卡功能</title>
+	<style type="text/css">
+		* {
+			margin:0;
+			padding:0;
+		}
+		button {
+			width:20px;
+			height:9px;
+			border:1px solid rgb(245, 238, 238);
+		}
+		.content {
+			display: none;
+			width:200px;
+			height:200px;
+			border:1px solid red;
+		}
+		.active {
+			background-color:yellow;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="wrapper">
+		<button class="active"></button>
+		<button></button>
+		<button></button>
+		<div class="content" style="display:block">1111</div>
+		<div class="content">2222</div>
+		<div class="content">3333</div>
+	</div>
+	<script type="text/javascript">
+		var btn = document.getElementsByTagName('button');
+		var div = document.getElementsByClassName('content');
+		for(var i = 0; i < btn.length; i ++) {
+			(function (n) {
+			btn[n].onclick = function() {
+				for(var j = 0; j < btn.length; j ++) {
+					btn[j].className = "";
+					div[j].style.display = "none";
+				}
+				this.className = "active";
+				div[n].style.display = "block";
+			}
+			}(i))
+		}
+
+
+
+
+
+
+	</script>
+</body>
+</html>

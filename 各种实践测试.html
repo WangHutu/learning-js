@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>测试</title>
+</head>
+<body>
+    <div>
+
+    </div>
+
+
+
+
+<script type="text/javascript">
+    var div = document.getElementsByTagName('div')[0];
+
+// 函数中的参数叫形参，传过来的值为实参
+// 函数中有默认的数组：arguments[];
+// 不管有多少实参，求所有实参的和
+    // function sum(){
+    //     var result = 0;
+    //     for (var i = 0; i < arguments.length; i++){
+    //         result += arguments[i];
+    //     }
+    //     console.log(result);
+    // }
+    // sum(1,2,3,4,5,3,2,6,7,2,2);
+    
+    
+// 注意 arguments 数组和 形参 是映射规则；不是相等关系；
+// arguments 的长度是由实参的个数来决定的;
+// 如果实参的个数小于形参的个数，那么剩余的形参不会被赋值,如果调用是undefined；
+
+// 参数改变一下，那么arguments跟着变；
+    // function sum (a,b) {
+    //     a = 2;
+    //     console.log(arguments[0]);
+    // }
+    // sum(1,2);
+
+// arguments 也可以改变参数的值；
+    // function sum(a,b) {
+    //     a = 2;
+    //     arguments[0] = 3;
+    //     console.log(a);
+    // }
+    // sum(1,2);
+
+
+// 立即执行函数的作用域，和全局变量是隔离的
+// 如果想访问全局变量，那么将全局变量当做实参传进去
+    // var foo = 1;
+    // (function foo (foo){
+    //     foo = 10;
+    //     console.log(foo); // foo想访问全局变量，必须将window当做参数传进去。
+    // }(window))
+
+
+    // var a = 1;
+    // (function b () {
+    //     a = 10;
+    //     console.log(b);
+    // }())
+
+
+// 手动更改car的构造器（constructor）
+    // function person() {
+
+    // }
+    // Car.prototype = {
+    //     constructor:person
+    // }
+    // function Car() {
+
+    // }
+    // var car = new Car();
+
+
+// 遍历
+// obj.prototype = {
+//     lastName : "wang"
+// }
+// var obj = {
+//     name : "123",
+//     age : 123,
+//     sex : "male",
+//     height : 180,
+//     weight : 75,
+
+// }
+// for (var prop in obj) {
+//     console.log(obj[prop]);
+// }
+
+
+
+// 把几个数组加到一块
+// var str = 'alibaba',
+//     str1 = 'baidu',
+//     str2 = 'tencent',
+//     str3 = 'toutiao',
+//     str4 = 'wangyi';
+// var strFinal = '';
+// var arr = [str, str1, str2, str3, str4];
+// 方法一：不太好
+// for(var i = 0; i < arr.length; i ++) {
+//     strFinal += arr[i];
+// }
+// 方法二：最优解
+// console.log(typeof(arr.join('')) + '  ' + arr.join(''));
+ 
+
+// typeof 有六种类型  "function"  "string"  "number"  "object"  "undefined"  "boolean" 
+// 封装type方法
+//区分：
+// typeof([])  ----->   array
+// typeof({})  ----->   object
+// typeof(function)  ----->   function
+// typeof(new Number)  ----->   number object
+// typeof(number)  ----->   number
+
+// function type(target) {
+//     if (typeof(target) == "number") {
+//         return typeof(target);
+//     }
+//     else {
+//         if (Object.prototype.toString.call(target) == "[object Array]") {
+//             return "array";
+//         }
+//         if (Object.prototype.toString.call(target) == "[object Function]") {
+//             return "function";
+//         }
+//         if (Object.prototype.toString.call(target) == "[object Number]") {
+//             return "number object";
+//         }
+//         if (Object.prototype.toString.call(target) == "[object Object]") {
+//             return "object";
+//         }
+//     }
+// }
+
+
+// 简化那上面的写法
+// function type(target) {
+//     var ret = typeof(target);
+//     var template = {
+//         "[object Array]" : "array",
+//         "[object Object]" : "object",
+//         "[object Number]" : "number",
+//         "[object Boolean]" : "boolean - object",
+//         "[object String]" : "string - object"
+//     }
+//     if(target === null) {
+//         return "null";
+//     }
+//     if(ret == "object") {
+//         var str = Object.prototype.toString.call(target);
+//         return template[str];
+//     }
+//     else{
+//         return ret;
+//     }
+// }
+
+// 数组去重
+    // Array.prototype.unique = function() {
+    //     var temp = {},
+    //         arr = [],
+    //         len = this.length;
+    //     for(var i = 0; i < len; i ++) {
+    //         if(!temp[this[i]]) {
+    //             temp[this[i]] = 'abc';
+    //             arr.push(this[i]);
+    //         }
+    //     }
+    //     return arr;
+    // }
+
+// function retDate(day) {
+//     var arr = ["星期一","星期二","星期三","星期四","星期五","星期六","星期日"];
+//     ret = arr[day - 1];
+//     if(ret === undefind) {
+//         return 'error';
+//     }else{
+//         return ret;
+//     }
+// }
+
+// 字符串去重
+    // var str = 'qweqwrqwiotywpoqtuytewqtyoiryeoiwtuipoywoietypowqyutpowqwyepqwtupwt';
+    // function strUnique(str1) {
+    //     var temp = {},
+    //         str2 = "";
+    //     for(var i = 0; i < str.length; i ++) {
+    //         if(!temp[str1[i]]) {
+    //             temp[str1[i]] = 'abc';
+    //             str2 += str1[i];
+    //         }
+    //     }
+    //     return str2;
+    // }
+
+
+// try...catch  --->  防止报错
+// try{大括号里面正常执行，但是遇到b报错时，b不执行，后面的c也不会执行，但是外面的代码d正常执行
+//        catch(e) 里面的e是个形参}
+
+// 如果try里面的代码不出错，那么catch里面的代码就不执行；
+// 如果try里面的代码 出错，那么catch负责抓取错误信息封装进去（error.message    error.name）
+
+    // try{
+    //     console.log('a');
+    //     console.log(b);
+    //     console.log('c');
+    // }catch(e) {
+    //     console.log(e.name + "：" + e.message);
+    // }
+    // console.log('d');
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

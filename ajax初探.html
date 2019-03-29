@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ajax练习</title>
+</head>
+<body>
+
+ 
+<script type=text/javascript>
+
+
+// 封装ajax的创建对象，兼容
+    function xmlHttp() {
+        var xmlhttp;
+        if(window.XMLHttpRequest) {
+
+            // IE7, Firefox,Chrome, Opera, Safari 浏览器的执行代码
+            xmlhttp = new XMLHttpRequest();
+        }else {
+
+            // IE6 ， IE5 浏览器的执行代码
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+    }
+    
+// 请求
+// open( method,url,async)   ---->  规定请求的类型，URL以及是否异步处理请求；
+//                                    method  请求的类型；GET或POST
+//                                    URL     文件在服务器上的位置
+//                                    async   true（异步）  或 false（同步）
+
+// send(string)              ---->  将请求发送到服务器
+
+
+</script>   
+    
+</body>
+</html>

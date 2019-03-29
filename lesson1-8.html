@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+
+		}
+
+		p{
+			width:550px;
+			height:20px;
+			line-height: 20px;
+			border:2px solid black;
+			/*三件套*/
+			white-space:nowrap;
+			overflow:hidden;
+			text-overflow:ellipsis;
+		}
+
+	</style>
+	<meta charset="UTF-8">
+	<title>各种css属性</title>
+	<link rel="stylesheet" type="text/css" href="">
+</head>
+<body>
+	<!-- 
+		1.单行文本超出一定范围会用点点点代替
+		2.多行文本不做点点点代替，只做截断处理
+	 -->
+	<p>单行文本超出300px，用点点点代替；单行文本超出300px，用点点点代替；单行文本超出300px，用点点点代替；</p>
+<br>
+<br>
+<br>
+
+	<h2>凡是设置了position:absolute和float:left/right；它会把内部元素转换成inline-block元素</h2>
+</body>
+</html>

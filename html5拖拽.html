@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>拖拽文件上传</title>
+</head>
+<style type="text/css">
+
+    #box{
+        width:200px;
+        height:200px;
+        border:1px dashed red;
+        text-align:center;
+        line-height:200px;
+    }
+</style>
+<body>
+    <div id="box">
+        拖拽文件上传
+    </div>
+
+
+    <h2>ondrag  ---->  该事件在元素 正在 拖动时触发 </h2>
+    <h2>ondragend  ---->  该事件在用户 完成 元素的拖动时触发 </h2>
+
+    <h2>ondragenter  ---->  该事件在拖动元素 进入 放置目标时触发 </h2>
+    <h2>ondragleave  ---->  该事件在拖动元素 离开 放置目标时触发 </h2>
+    <h2>ondragover  ---->  该事件在拖动元素 在 放置目标上时触发 </h2>
+
+    <h2>ondragstart  ---->  该事件在用户 开始拖动 元素时触发 </h2>
+    <h2>ondrop  ---->  该事件在拖动元素 放置在 目标区域时触发 </h2>
+
+    <script>
+        var box = document.getElementById('box');
+        box.ondragenter = function(e) {
+            alert(a);
+            e.preventDefault(); // 阻止默认事件（组织浏览器打开文件） ---> 用return false也可以，因为是句柄绑定的事件
+        }
+        box.ondragover = function(e) {
+            e.preventDefault();  // 阻止默认事件（组织浏览器打开文件）
+            box.innerHTML = "轻松开";
+        }
+        box.ondragleave = function(e) {
+            e.preventDefault();  // 阻止默认事件（组织浏览器打开文件）
+            box.innerHTML = "快回来";
+        }
+        
+        
+
+     </script>   
+
+</body>
+</html>

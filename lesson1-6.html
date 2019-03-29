@@ -1,0 +1,87 @@
+<html>
+
+<head>
+	<style type="text/css">
+
+		*{
+		margin:0;
+		padding:0;
+			
+			
+		}
+
+		.plat{
+			position:fixed;
+			left:50%;
+			top:50%;
+			margin-left:-190px;
+			margin-top:-93px;
+		/*	border:5px solid black;*/
+			height:186;
+			width:380;
+			
+		}
+		.circle1,
+		.circle2,
+		.circle3,
+		.circle4,
+		.circle5{
+			position:absolute;
+			width:100px;
+			height:100px;
+			border:10px solid black;
+			border-radius:50%;		
+		/*	 radius是圆角的意思*/
+		}
+
+		.circle1{
+			border-color:red;
+			left:0;
+			top:0;
+
+		}
+		.circle2{
+			border-color:green;
+			left:130;
+			top:0;
+			z-index:3;
+
+		}
+		.circle3{
+			border-color:yellow;
+			left:260;
+			top:0;
+
+		}
+		.circle4{
+			border-color:blue;
+			left:65;
+			top:65;
+
+		}
+		.circle5{
+			border-color:purple;
+			left:195;
+			top:65;
+
+		}
+		
+	</style>
+<meta charset="UTF-8">
+<title>五环居中</title>
+<link rel="stylesheet" type="text/css" href="">
+</head>
+<body>
+
+
+<div class="plat">
+	<div class="circle1"></div>
+	<div class="circle2"></div>
+	<div class="circle3"></div>
+	<div class="circle4"></div>
+	<div class="circle5"></div>
+</div>
+
+
+</body>
+</html>

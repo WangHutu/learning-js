@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>原型，原型链</title>
+</head>
+<body>
+    <script type="text/javascript">
+
+
+
+
+// 原型
+    /*
+    Person.prototype.name = 'sunny';
+    function Person() {
+
+    }
+
+    var person = new Person();
+    // 当new的时候  执行隐式的下面两行
+    // var.this = {__proto__ : Person.prototype}
+    // __proto__和Person.prototype指向同一个房间，但是Persom.prototype换房间了，__proto__没换。
+
+    Person.prototype = {
+        name : 'cherry'
+    }
+    
+    person.name // 结果是 sunny.
+     */
+    
+
+// call 和 
+    // 作用都是更改 this 的指向    
+    // function Person(name, age, sex) {
+    //     this.name = name;
+    //     this.age = age;
+    //     this.sex = sex;
+    // }
+
+    // call 让 Student 函数中调用 Person 函数。
+    // function Student(name, age, sex, tel, grade) {
+    //     Person.call(this, name, age, sex);  // 这里面的 this 指的是Student。
+    //     this.tel = tel;
+    //     this.grade = grade;
+    // }
+    
+
+
+    // abc();
+    // function abc() {
+    //     this.a = 123;
+    // }
+    </script>
+    
+</body>
+</html>
