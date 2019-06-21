@@ -9,8 +9,8 @@
 			padding:0;
 		}
 		button {
-			width:20px;
-			height:9px;
+			width:100px;
+			height:50px;
 			border:1px solid rgb(245, 238, 238);
 		}
 		.content {
@@ -27,9 +27,9 @@
 <body>
 
 	<div class="wrapper">
-		<button class="active"></button>
-		<button></button>
-		<button></button>
+		<button class="active">123</button>
+		<button>456</button>
+		<button>789</button>
 		<div class="content" style="display:block">1111</div>
 		<div class="content">2222</div>
 		<div class="content">3333</div>
@@ -38,7 +38,7 @@
 		var btn = document.getElementsByTagName('button');
 		var div = document.getElementsByClassName('content');
 		for(var i = 0; i < btn.length; i ++) {
-			(function (n) {
+			(function ss (n) {
 			btn[n].onclick = function() {
 				for(var j = 0; j < btn.length; j ++) {
 					btn[j].className = "";
@@ -47,7 +47,7 @@
 				this.className = "active";
 				div[n].style.display = "block";
 			}
-			}(i))
+			})(i);
 		}
 
 
