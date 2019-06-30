@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>MVP 模式</title>
+</head>
+<body>
+	<div>
+		<input type="text" id="input">
+		<button id="btn">提交</button>
+		<ul id="list"></ul>
+	</div>
+	<script src="./lib/jquery-1.12.4.js"></script>
+	<script>
+		// 在MVP模式中
+		// M ---> model（数据）
+		// V ---> View（视图）
+		// P ---> Presenter（控制，业务逻辑）
+		// 视图层的改变   <----->   通过业务逻辑（业务逻辑通过请求数据，来操作 DOM 从而影响视图）   <----->   数据
+
+
+		function Page() {
+
+		}
+		$.extend(Page.prototype, {
+			init: function() {
+				this.bindEvents()
+			},
+			bindEvents: function() {
+				var btn = $('#btn');
+				btn.on('click', $.proxy(this.handleBtnClick,this))
+			},
+			handleBtnClick: function() {
+				var inputElem = $('#input');
+				var inputValue = inputElem.val();
+				var ulElem = $('#list');
+				ulElem.append('<li>' + inputValue + '</li>');
+				inputElem.val('');
+			}
+		})
+		var page = new Page();
+		page.init();
+	</script>
+</body>
+</html>
